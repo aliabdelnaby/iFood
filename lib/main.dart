@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'features/splash/splash.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'iFood',
-      home: Scaffold(),
+      theme: ThemeData(
+        fontFamily: 'Poppins',
+      ),
+      home: const SplashView(),
     );
   }
 }
