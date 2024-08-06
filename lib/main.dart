@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'iFood',
       theme: ThemeData(
         fontFamily: 'Poppins',
+        scaffoldBackgroundColor: const Color(0xffF7F7F7),
       ),
       routerConfig: router,
     );
