@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ifood/core/utils/app_colors.dart';
 import 'package:ifood/core/utils/app_text_styles.dart';
 import 'package:ifood/core/utils/assets.dart';
+import 'package:ifood/features/start/presentation/widget/custom_text_field.dart';
+import 'dart:async';
 
 class StartView extends StatefulWidget {
   const StartView({super.key});
@@ -15,10 +17,19 @@ class _StartViewState extends State<StartView>
   late AnimationController _controller;
   late Animation<Offset> _offsetAnimation;
 
+  late final TextEditingController _usernameController =
+      TextEditingController();
+  late final TextEditingController _tableNumberController =
+      TextEditingController();
+
+  String _currentText = "All you need in one place";
+  bool _showFirstText = true;
+
   @override
   void initState() {
     super.initState();
     animatedLogo();
+    startTextAnimation();
   }
 
   void animatedLogo() {
@@ -37,9 +48,24 @@ class _StartViewState extends State<StartView>
     );
   }
 
+  void startTextAnimation() {
+    Timer.periodic(
+      const Duration(seconds: 3),
+      (timer) {
+        setState(() {
+          _showFirstText = !_showFirstText;
+          _currentText =
+              _showFirstText ? "All you need in one place" : "Enjoy Your Meal";
+        });
+      },
+    );
+  }
+
   @override
   void dispose() {
     _controller.dispose();
+    _usernameController.dispose();
+    _tableNumberController.dispose();
     super.dispose();
   }
 
@@ -60,17 +86,37 @@ class _StartViewState extends State<StartView>
                 ),
               ),
               const SizedBox(height: 25),
-              const Text(
-                'All you need in one place',
-                style: AppStyles.style18w600,
+              AnimatedSwitcher(
+                duration: const Duration(seconds: 1),
+                transitionBuilder: (Widget child, Animation<double> animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                child: Text(
+                  _currentText,
+                  key: ValueKey<String>(_currentText),
+                  style: AppStyles.style18w600,
+                  textAlign: TextAlign.center,
+                ),
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 40),
               Text(
                 'Please Provide Your Information To Get Started',
                 style: AppStyles.style14w500Black.copyWith(
                   color: AppColors.whiteColor,
                 ),
                 textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 25),
+              CustomTextField(
+                controller: _usernameController,
+                hintText: 'Your Name',
+                keyboardType: TextInputType.name,
+              ),
+              const SizedBox(height: 20),
+              CustomTextField(
+                controller: _tableNumberController,
+                hintText: 'Table Number',
+                keyboardType: TextInputType.number,
               ),
             ],
           ),
