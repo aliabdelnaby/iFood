@@ -20,12 +20,32 @@ class CustomTextField extends StatelessWidget {
       keyboardType: keyboardType,
       controller: controller,
       decoration: InputDecoration(
+        errorStyle: const TextStyle(
+          color: AppColors.whiteColor,
+        ),
+        errorBorder: errorBorder(),
+        focusedErrorBorder: errorBorder(),
         fillColor: AppColors.whiteColor,
         filled: true,
         focusedBorder: buildborder(),
         enabledBorder: buildborder(),
         border: buildborder(),
         hintText: hintText,
+      ),
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'This field is required';
+        }
+        return null;
+      },
+    );
+  }
+
+  OutlineInputBorder errorBorder() {
+    return const OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.red,
+        width: 1.5,
       ),
     );
   }
