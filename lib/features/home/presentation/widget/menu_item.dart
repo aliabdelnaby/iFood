@@ -5,10 +5,7 @@ import 'package:ifood/core/utils/app_text_styles.dart';
 import 'package:ifood/features/home/data/models/menu_model.dart';
 
 class MenuItem extends StatelessWidget {
-  const MenuItem({
-    super.key,
-    required this.item,
-  });
+  const MenuItem({super.key, required this.item});
 
   final MenuModel item;
 
@@ -17,6 +14,10 @@ class MenuItem extends StatelessWidget {
     return Column(
       children: [
         Container(
+          constraints: const BoxConstraints(
+            minHeight: 45,
+            minWidth: 45,
+          ),
           clipBehavior: Clip.none,
           decoration: BoxDecoration(
             color: AppColors.menuGreyColor,
