@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/splash/splash.dart';
+import 'package:ifood/core/router/app_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,13 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'iFood',
       theme: ThemeData(
         fontFamily: 'Poppins',
       ),
-      home: const SplashView(),
+      routerConfig: router,
     );
   }
 }
