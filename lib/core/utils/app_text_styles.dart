@@ -14,13 +14,13 @@ class AppStyles {
   );
   static TextStyle style14w500search = TextStyle(
     color: Colors.black.withOpacity(0.52),
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
   );
   static const TextStyle style14w500 = TextStyle(
     color: AppColors.primaryColor,
-    fontSize: 18,
-    fontWeight: FontWeight.w600,
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
     decoration: TextDecoration.underline,
   );
   static const TextStyle style14w500Black = TextStyle(
