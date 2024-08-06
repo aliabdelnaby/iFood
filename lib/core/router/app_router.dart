@@ -1,6 +1,6 @@
 import 'package:go_router/go_router.dart';
-import 'package:ifood/features/splash/splash.dart';
-import 'package:ifood/features/start/presentation/view/start_view.dart';
+import '../../features/splash/splash.dart';
+import '../../features/start/presentation/view/start_view.dart';
 
 final GoRouter router = GoRouter(
   initialLocation: '/',

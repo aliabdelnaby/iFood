@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/router/app_router.dart';
+import 'core/router/app_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

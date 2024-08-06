@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/core/utils/assets.dart';
-import 'package:ifood/features/start/presentation/widget/custom_text_field.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
+import '../../../../core/utils/assets.dart';
+import '../widget/custom_text_field.dart';
 import 'dart:async';
+import '../widget/get_started_btn.dart';
 
 class StartView extends StatefulWidget {
   const StartView({super.key});
@@ -117,6 +118,10 @@ class _StartViewState extends State<StartView>
                 controller: _tableNumberController,
                 hintText: 'Table Number',
                 keyboardType: TextInputType.number,
+              ),
+              const SizedBox(height: 30),
+              GetStartedBtn(
+                onPressed: () {},
               ),
             ],
           ),

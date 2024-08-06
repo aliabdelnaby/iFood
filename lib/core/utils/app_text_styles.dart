@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
+import 'app_colors.dart';
 
 class AppStyles {
   static const TextStyle style18w600 = TextStyle(
