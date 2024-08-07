@@ -11,6 +11,8 @@ class CartView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.scaffoldBackgroundColor,
+        elevation: 0,
+        surfaceTintColor: Colors.transparent,
         title: Text(
           'Cart',
           style: AppStyles.style28w700.copyWith(

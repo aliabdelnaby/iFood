@@ -64,7 +64,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
       onTap: onTap,
       currentIndex: currentIndex,
       backgroundColor: AppColors.whiteColor,
-      elevation: 0,
+      elevation: 4,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primaryColor,
       showSelectedLabels: false,
