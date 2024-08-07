@@ -7,15 +7,13 @@ import '../../data/data_source/breakfast_list.dart';
 import '../../data/data_source/lunch_list.dart';
 import '../../data/data_source/dinner_list.dart';
 import '../../data/data_source/snacks_list.dart';
+import '../../data/models/product_model.dart';
 import 'home_product_item.dart';
 import 'menu_item.dart';
 import 'view_all_widget.dart';
-import '../../data/models/product_model.dart';
 
 class HomeViewBody extends StatefulWidget {
-  final TextEditingController searchController;
-
-  const HomeViewBody({super.key, required this.searchController});
+  const HomeViewBody({super.key});
 
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
@@ -24,7 +22,6 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   int _selectedIndex = 0;
   List<ProductModel> _selectedProductList = allProductsList;
-  List<ProductModel> _filteredProductList = allProductsList;
 
   final List<List<ProductModel>> _productLists = [
     allProductsList,
@@ -38,35 +35,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     setState(() {
       _selectedIndex = index;
       _selectedProductList = _productLists[index];
-      _filterProducts();
     });
-  }
-
-  void _filterProducts() {
-    setState(() {
-      if (widget.searchController.text.isEmpty) {
-        _filteredProductList = _selectedProductList;
-      } else {
-        _filteredProductList = _selectedProductList
-            .where((product) => product.name
-                .toLowerCase()
-                .contains(widget.searchController.text.toLowerCase()))
-            .toList();
-      }
-    });
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    widget.searchController.addListener(_filterProducts);
-  }
-
-  @override
-  void dispose() {
-    widget.searchController.removeListener(_filterProducts);
-    widget.searchController.dispose();
-    super.dispose();
   }
 
   @override
@@ -86,7 +55,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
               const SizedBox(height: 12),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
+                height: MediaQuery.of(context).size.height * 0.09,
                 child: ListView.separated(
                   clipBehavior: Clip.none,
                   scrollDirection: Axis.horizontal,
@@ -106,25 +75,17 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ],
           ),
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 24),
         const ViewAllWidget(),
         Expanded(
-          child: _filteredProductList.isEmpty
-              ? Center(
-                  child: Text(
-                    'No products found: ${widget.searchController.text}',
-                    style: AppStyles.style18w600.copyWith(
-                      color: AppColors.greyColor,
-                    ),
-                  ),
-                )
-              : ListView.builder(
-                  itemCount: _filteredProductList.length,
-                  itemBuilder: (context, index) {
-                    return HomeProductItem(
-                        product: _filteredProductList[index]);
-                  },
-                ),
+          child: ListView.builder(
+            itemCount: _selectedProductList.length,
+            itemBuilder: (context, index) {
+              return HomeProductItem(
+                product: _selectedProductList[index],
+              );
+            },
+          ),
         ),
       ],
     );

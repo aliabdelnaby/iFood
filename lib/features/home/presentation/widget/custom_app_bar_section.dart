@@ -5,14 +5,9 @@ import 'custom_appbar.dart';
 import 'custom_search_text_field.dart';
 
 class CustomAppBarSection extends StatelessWidget {
-  const CustomAppBarSection({
-    super.key,
-    required this.username,
-    required this.searchController,
-  });
+  const CustomAppBarSection({super.key, required this.username});
 
   final String username;
-  final TextEditingController searchController;
 
   @override
   Widget build(BuildContext context) {
@@ -37,9 +32,7 @@ class CustomAppBarSection extends StatelessWidget {
             style: AppStyles.style28w700,
           ),
           const SizedBox(height: 10),
-          CustomSearchTextField(
-            searchController: searchController,
-          ),
+          const CustomSearchTextField(),
           const SizedBox(height: 32),
         ],
       ),

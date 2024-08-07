@@ -107,12 +107,15 @@ class _StartViewState extends State<StartView>
                   ),
                 ),
                 const SizedBox(height: 40),
-                Text(
-                  'Please Provide Your Information To Get Started',
-                  style: AppStyles.style14w500Black.copyWith(
-                    color: AppColors.whiteColor,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Let\'s get you started',
+                    style: AppStyles.style14w500Black.copyWith(
+                      color: AppColors.whiteColor,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 25),
                 CustomTextField(

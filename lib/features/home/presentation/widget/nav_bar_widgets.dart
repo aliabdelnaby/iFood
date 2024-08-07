@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/features/account/presentation/views/account_view.dart';
-import 'package:ifood/features/cart/presentation/views/cart_view.dart';
-import 'package:ifood/features/favorites/presentation/views/favorites_view.dart';
-import 'package:ifood/features/home/presentation/view/home_view.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../account/presentation/views/account_view.dart';
+import '../../../cart/presentation/views/cart_view.dart';
+import '../../../favorites/presentation/views/favorites_view.dart';
+import '../view/home_view.dart';
 
 class UserMainLayoutScreen extends StatefulWidget {
   const UserMainLayoutScreen({super.key});
@@ -64,7 +64,7 @@ class UserBottomNavBarWidget extends StatelessWidget {
       onTap: onTap,
       currentIndex: currentIndex,
       backgroundColor: AppColors.whiteColor,
-      elevation: 4,
+      elevation: 0,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: AppColors.primaryColor,
       showSelectedLabels: false,

@@ -3,9 +3,9 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  final TextEditingController searchController;
+  const CustomSearchTextField({super.key, this.searchController});
 
-  const CustomSearchTextField({super.key, required this.searchController});
+  final TextEditingController? searchController;
 
   @override
   Widget build(BuildContext context) {
