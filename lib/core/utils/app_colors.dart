@@ -14,4 +14,5 @@ class AppColors {
   static Color cardShadowColor = Colors.black.withOpacity(0.25);
   static const Color emailColor = Color(0xFF737373);
   static const Color logOutColor = Color(0xFFF6F6F6);
+  static const Color scaffoldBackgroundColor = Color(0xffF7F7F7);
 }

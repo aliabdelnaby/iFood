@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ifood/core/utils/app_colors.dart';
 import 'core/router/app_router.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'iFood',
       theme: ThemeData(
         fontFamily: 'Poppins',
-        scaffoldBackgroundColor: const Color(0xffF7F7F7),
+        scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
       ),
       routerConfig: router,
     );
