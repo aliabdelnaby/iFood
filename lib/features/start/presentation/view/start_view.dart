@@ -131,7 +131,7 @@ class _StartViewState extends State<StartView>
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       context.go(
-                        '/home',
+                        '/mainView',
                         extra: {
                           'username': _usernameController.text,
                           'tableNumber': _tableNumberController.text,

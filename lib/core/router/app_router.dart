@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:ifood/features/home/presentation/widget/nav_bar_widgets.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/splash/splash.dart';
 import '../../features/start/presentation/view/start_view.dart';
@@ -13,6 +14,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/start',
       builder: (context, state) => const StartView(),
+    ),
+    GoRoute(
+      path: '/mainView',
+      builder: (context, state) => const UserMainLayoutScreen(),
     ),
     GoRoute(
       path: '/home',

@@ -9,7 +9,7 @@ class AppColors {
   static const Color menuGreyColor = Color(0xFFD9D9D9);
   static const Color ratingColor = Color(0xFFF9E20D);
   static const Color unlikedColor = Color(0xFFF9E20D);
-  static const Color ratingGreyColor = Color(0xFFDBDBDB);
+  static const Color primGreyColor = Color(0xFFDBDBDB);
   static const Color greyColor = Color(0xFF706F6F);
   static Color cardShadowColor = Colors.black.withOpacity(0.25);
   static const Color emailColor = Color(0xFF737373);

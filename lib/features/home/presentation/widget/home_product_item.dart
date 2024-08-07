@@ -46,7 +46,7 @@ class HomeProductItem extends StatelessWidget {
                     onTap: null,
                     child: Icon(
                       Icons.favorite,
-                      color: AppColors.ratingGreyColor,
+                      color: AppColors.primGreyColor,
                     ),
                   ),
                 ),
