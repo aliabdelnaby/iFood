@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:ifood/features/home/presentation/view/home_view.dart';
+import '../../features/home/presentation/view/home_view.dart';
 import '../../features/splash/splash.dart';
 import '../../features/start/presentation/view/start_view.dart';
 

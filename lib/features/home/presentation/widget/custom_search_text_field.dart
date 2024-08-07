@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({super.key});
+  final TextEditingController searchController;
+
+  const CustomSearchTextField({super.key, required this.searchController});
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: searchController,
       cursorColor: AppColors.primaryColor,
       decoration: InputDecoration(
         fillColor: AppColors.searchColor,

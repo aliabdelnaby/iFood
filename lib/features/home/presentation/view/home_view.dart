@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ifood/features/home/presentation/widget/custom_app_bar_section.dart';
-import 'package:ifood/features/home/presentation/widget/home_view_body.dart';
+import '../widget/custom_app_bar_section.dart';
+import '../widget/home_view_body.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  final TextEditingController searchController = TextEditingController();
+  @override
+  void dispose() {
+    searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +28,16 @@ class HomeView extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(flex: 1, child: CustomAppBarSection(username: username)),
+            CustomAppBarSection(
+              username: username,
+              searchController: searchController,
+            ),
             const SizedBox(height: 16),
-            const Expanded(
+            Expanded(
               flex: 3,
-              child: HomeViewBody(),
+              child: HomeViewBody(
+                searchController: searchController,
+              ),
             ),
           ],
         ),

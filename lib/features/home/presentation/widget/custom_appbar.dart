@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/core/utils/assets.dart';
+import '../../../../core/utils/app_text_styles.dart';
+import '../../../../core/utils/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key, required this.username});

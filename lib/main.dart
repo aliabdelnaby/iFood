@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
+import 'core/utils/app_colors.dart';
 import 'core/router/app_router.dart';
 
 void main() {

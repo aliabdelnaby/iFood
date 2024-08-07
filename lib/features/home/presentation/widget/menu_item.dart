@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/features/home/data/models/menu_model.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
+import '../../data/models/menu_model.dart';
 
 class MenuItem extends StatelessWidget {
   const MenuItem({

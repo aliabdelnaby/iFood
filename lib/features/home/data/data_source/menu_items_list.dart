@@ -1,5 +1,5 @@
-import 'package:ifood/core/utils/assets.dart';
-import 'package:ifood/features/home/data/models/menu_model.dart';
+import '../../../../core/utils/assets.dart';
+import '../models/menu_model.dart';
 
 List<MenuModel> menuListItems = [
   MenuModel(

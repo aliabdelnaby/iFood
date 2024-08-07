@@ -1,5 +1,5 @@
-import 'package:ifood/core/utils/assets.dart';
-import 'package:ifood/features/home/data/models/product_model.dart';
+import '../../../../core/utils/assets.dart';
+import '../models/product_model.dart';
 
 List<ProductModel> lunchList = [
   ProductModel(
