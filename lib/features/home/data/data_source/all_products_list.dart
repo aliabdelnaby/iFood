@@ -124,7 +124,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Apple',
     category: 'Snack',
-    image: 'assets/images/Apple.jpg',
+    image: 'assets/images/apple.jpg',
     description: '',
     price: '\$2.5',
     oldPrice: '\$3.00',

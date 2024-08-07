@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ifood/core/utils/app_colors.dart';
 import 'package:ifood/core/utils/app_text_styles.dart';
+import 'package:ifood/features/home/data/data_source/all_products_list.dart';
 import 'package:ifood/features/home/data/data_source/menu_items_list.dart';
 import 'package:ifood/features/home/presentation/widget/home_product_item.dart';
 import 'package:ifood/features/home/presentation/widget/menu_item.dart';
@@ -63,9 +64,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         const ViewAllWidget(),
         Expanded(
           child: ListView.builder(
-            itemCount: 5,
+            itemCount: allProductsList.length,
             itemBuilder: (context, index) {
-              return const HomeProductItem();
+              return HomeProductItem(product: allProductsList[index]);
             },
           ),
         ),
