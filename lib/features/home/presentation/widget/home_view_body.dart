@@ -6,8 +6,21 @@ import 'package:ifood/features/home/presentation/widget/home_product_item.dart';
 import 'package:ifood/features/home/presentation/widget/menu_item.dart';
 import 'package:ifood/features/home/presentation/widget/view_all_widget.dart';
 
-class HomeViewBody extends StatelessWidget {
+class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
+
+  @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  int _selectedIndex = 0;
+
+  void _onMenuItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,9 +48,10 @@ class HomeViewBody extends StatelessWidget {
                       const SizedBox(width: 30),
                   itemBuilder: (context, index) {
                     final item = menuListItems[index];
-                    return InkWell(
-                      onTap: () {},
-                      child: MenuItem(item: item),
+                    return MenuItem(
+                      item: item,
+                      isSelected: index == _selectedIndex,
+                      onTap: () => _onMenuItemTap(index),
                     );
                   },
                 ),

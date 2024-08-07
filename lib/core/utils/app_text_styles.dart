@@ -22,6 +22,8 @@ class AppStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     decoration: TextDecoration.underline,
+    decorationColor: AppColors.primaryColor,
+    decorationThickness: 2,
   );
   static const TextStyle style14w500Black = TextStyle(
     color: AppColors.blackColor,
