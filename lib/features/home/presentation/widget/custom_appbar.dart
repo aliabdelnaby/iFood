@@ -4,8 +4,13 @@ import '../../../../core/utils/app_text_styles.dart';
 import '../../../../core/utils/assets.dart';
 
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key, required this.username});
+  const CustomAppBar({
+    super.key,
+    required this.username,
+    required this.searchController,
+  });
 
+  final TextEditingController searchController;
   final String username;
 
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/features/home/data/models/product_model.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_styles.dart';
+import '../../../data/models/product_model.dart';
 
 class ProductDetailsHeader extends StatelessWidget {
   const ProductDetailsHeader({

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/features/home/data/data_source/all_products_list.dart';
-import 'package:ifood/features/home/data/models/product_model.dart';
-import 'package:ifood/features/home/presentation/widget/product_details/product_details_advantages.dart';
-import 'package:ifood/features/home/presentation/widget/product_details/product_details_heaer.dart';
+import '../../../../../core/utils/app_colors.dart';
+import '../../../../../core/utils/app_text_styles.dart';
+import '../../../data/data_source/all_products_list.dart';
+import '../../../data/models/product_model.dart';
+import 'product_details_advantages.dart';
+import 'product_details_heaer.dart';
 
 class ProductDetailsViewBody extends StatelessWidget {
   const ProductDetailsViewBody({super.key, required this.product});

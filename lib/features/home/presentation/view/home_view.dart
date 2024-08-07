@@ -3,8 +3,15 @@ import 'package:go_router/go_router.dart';
 import '../widget/custom_app_bar_section.dart';
 import '../widget/home_view_body.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +23,15 @@ class HomeView extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomAppBarSection(username: username),
+            CustomAppBarSection(
+              username: username,
+              searchController: searchController,
+            ),
             const SizedBox(height: 16),
-            const Expanded(
-              child: HomeViewBody(),
+            Expanded(
+              child: HomeViewBody(
+                searchController: searchController,
+              ),
             ),
           ],
         ),
