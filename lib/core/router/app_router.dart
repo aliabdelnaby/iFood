@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:ifood/features/home/presentation/view/product_details_view.dart';
 import '../../features/home/presentation/widget/nav_bar_widgets.dart';
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/splash/splash.dart';
@@ -22,6 +23,10 @@ final GoRouter router = GoRouter(
     GoRoute(
       path: '/home',
       builder: (context, state) => const HomeView(),
+    ),
+    GoRoute(
+      path: '/productDetails',
+      builder: (context, state) => const ProductDetailsView(),
     ),
   ],
 );

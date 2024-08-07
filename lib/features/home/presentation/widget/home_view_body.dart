@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../data/data_source/all_products_list.dart';
@@ -55,7 +56,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
               const SizedBox(height: 12),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.09,
+                height: MediaQuery.of(context).size.height * 0.1,
                 child: ListView.separated(
                   clipBehavior: Clip.none,
                   scrollDirection: Axis.horizontal,
@@ -75,14 +76,24 @@ class _HomeViewBodyState extends State<HomeViewBody> {
             ],
           ),
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 20),
         const ViewAllWidget(),
         Expanded(
           child: ListView.builder(
             itemCount: _selectedProductList.length,
             itemBuilder: (context, index) {
-              return HomeProductItem(
-                product: _selectedProductList[index],
+              return InkWell(
+                onTap: () {
+                  GoRouter.of(context).push(
+                    '/productDetails',
+                    extra: {
+                      'product': _selectedProductList[index],
+                    },
+                  );
+                },
+                child: HomeProductItem(
+                  product: _selectedProductList[index],
+                ),
               );
             },
           ),
