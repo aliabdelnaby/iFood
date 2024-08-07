@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:ifood/core/utils/app_colors.dart';
 import 'package:ifood/core/utils/app_text_styles.dart';
 import 'package:ifood/features/home/data/data_source/all_products_list.dart';
@@ -46,11 +47,21 @@ class ProductDetailsViewBody extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 11),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.asset(
-                        allProductsList[index].image,
-                        height: 93,
-                        width: 121,
-                        fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () {
+                          GoRouter.of(context).push(
+                            '/productDetails',
+                            extra: {
+                              'product': allProductsList[index],
+                            },
+                          );
+                        },
+                        child: Image.asset(
+                          allProductsList[index].image,
+                          height: 93,
+                          width: 121,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   );
@@ -58,6 +69,7 @@ class ProductDetailsViewBody extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 16),
         ],
       ),
     );
