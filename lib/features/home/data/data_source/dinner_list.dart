@@ -1,10 +1,11 @@
+import 'package:ifood/core/utils/assets.dart';
 import 'package:ifood/features/home/data/models/product_model.dart';
 
 List<ProductModel> dinnerList = [
   ProductModel(
     name: 'Meat',
     category: 'Dinner',
-    image: 'assets/images/Meat.jpg',
+    image: Assets.imagesMeat,
     description: '',
     price: '\$30.3',
     oldPrice: '\$35.2',
@@ -12,7 +13,7 @@ List<ProductModel> dinnerList = [
   ProductModel(
     name: 'Shawarma',
     category: 'Dinner',
-    image: 'assets/images/Shawarma.jpg',
+    image: Assets.imagesShawarma,
     description: '',
     price: '\$15.8',
     oldPrice: '\$20.4',
@@ -20,7 +21,7 @@ List<ProductModel> dinnerList = [
   ProductModel(
     name: 'Pasta',
     category: 'Dinner',
-    image: 'assets/images/Pasta.jpg',
+    image: Assets.imagesPasta,
     description: '',
     price: '\$26.4',
     oldPrice: '\$28.6',
@@ -28,7 +29,7 @@ List<ProductModel> dinnerList = [
   ProductModel(
     name: 'Fried Chicken',
     category: 'Dinner',
-    image: 'assets/images/FriedChicken.jpg',
+    image: Assets.imagesFriedChicken,
     description: '',
     price: '\$29.2',
     oldPrice: '\$31.8',

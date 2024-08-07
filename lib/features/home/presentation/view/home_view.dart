@@ -16,9 +16,10 @@ class HomeView extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CustomAppBarSection(username: username),
+            Expanded(flex: 1, child: CustomAppBarSection(username: username)),
             const SizedBox(height: 16),
             const Expanded(
+              flex: 3,
               child: HomeViewBody(),
             ),
           ],

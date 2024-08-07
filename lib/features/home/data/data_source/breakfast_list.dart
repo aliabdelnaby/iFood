@@ -1,9 +1,10 @@
+import 'package:ifood/core/utils/assets.dart';
 import 'package:ifood/features/home/data/models/product_model.dart';
 
 List<ProductModel> breakfastList = [
   ProductModel(
     name: 'Honey toast',
-    image: 'assets/images/Honeytoast.jpg',
+    image: Assets.imagesHoneytoast,
     price: '\$8.9',
     category: 'Breakfast',
     description: '',
@@ -11,7 +12,7 @@ List<ProductModel> breakfastList = [
   ),
   ProductModel(
     name: 'Croissant',
-    image: 'assets/images/Croissant.jpg',
+    image: Assets.imagesCroissant,
     price: '\$5.5',
     category: 'Breakfast',
     description: '',
@@ -19,7 +20,7 @@ List<ProductModel> breakfastList = [
   ),
   ProductModel(
     name: 'Eggs',
-    image: 'assets/images/Eggs.jpg',
+    image: Assets.imagesEggs,
     price: '\$3.3',
     category: 'Breakfast',
     description: '',
@@ -27,7 +28,7 @@ List<ProductModel> breakfastList = [
   ),
   ProductModel(
     name: 'Pie with Honey',
-    image: 'assets/images/PiewithHoney.jpg',
+    image: Assets.imagesPiewithHoney,
     price: '\$7.1',
     category: 'Breakfast',
     description: '',

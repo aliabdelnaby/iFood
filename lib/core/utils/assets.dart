@@ -22,8 +22,8 @@ class Assets {
   static const String imagesAll = "assets/images/all.svg";
 
   /// Assets for imagesApple
-  /// assets/images/apple.jpg
-  static const String imagesApple = "assets/images/apple.jpg";
+  /// assets/images/Apple.jpg
+  static const String imagesApple = "assets/images/Apple.jpg";
 
   /// Assets for imagesBreakFast
   /// assets/images/breakFast.svg

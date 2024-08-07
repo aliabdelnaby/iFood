@@ -3,6 +3,11 @@ import 'package:ifood/core/utils/app_colors.dart';
 import 'package:ifood/core/utils/app_text_styles.dart';
 import 'package:ifood/features/home/data/data_source/all_products_list.dart';
 import 'package:ifood/features/home/data/data_source/menu_items_list.dart';
+import 'package:ifood/features/home/data/data_source/breakfast_list.dart';
+import 'package:ifood/features/home/data/data_source/lunch_list.dart';
+import 'package:ifood/features/home/data/data_source/dinner_list.dart';
+import 'package:ifood/features/home/data/data_source/snacks_list.dart';
+import 'package:ifood/features/home/data/models/product_model.dart';
 import 'package:ifood/features/home/presentation/widget/home_product_item.dart';
 import 'package:ifood/features/home/presentation/widget/menu_item.dart';
 import 'package:ifood/features/home/presentation/widget/view_all_widget.dart';
@@ -16,10 +21,20 @@ class HomeViewBody extends StatefulWidget {
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   int _selectedIndex = 0;
+  List<ProductModel> _selectedProductList = allProductsList;
+
+  final List<List<ProductModel>> _productLists = [
+    allProductsList,
+    breakfastList,
+    snacksList,
+    lunchList,
+    dinnerList,
+  ];
 
   void _onMenuItemTap(int index) {
     setState(() {
       _selectedIndex = index;
+      _selectedProductList = _productLists[index];
     });
   }
 
@@ -64,9 +79,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         const ViewAllWidget(),
         Expanded(
           child: ListView.builder(
-            itemCount: allProductsList.length,
+            itemCount: _selectedProductList.length,
             itemBuilder: (context, index) {
-              return HomeProductItem(product: allProductsList[index]);
+              return HomeProductItem(product: _selectedProductList[index]);
             },
           ),
         ),

@@ -1,24 +1,25 @@
+import 'package:ifood/core/utils/assets.dart';
 import 'package:ifood/features/home/data/models/menu_model.dart';
 
 List<MenuModel> menuListItems = [
   MenuModel(
     name: 'All',
-    image: 'assets/images/all.svg',
+    image: Assets.imagesAll,
   ),
   MenuModel(
     name: 'Breakfast',
-    image: 'assets/images/breakFast.svg',
+    image: Assets.imagesBreakFast,
   ),
   MenuModel(
     name: 'Snack',
-    image: 'assets/images/snack.svg',
+    image: Assets.imagesSnack,
   ),
   MenuModel(
     name: 'Lunch',
-    image: 'assets/images/lunch.svg',
+    image: Assets.imagesLunch,
   ),
   MenuModel(
     name: 'Dinner',
-    image: 'assets/images/dinner.svg',
+    image: Assets.imagesDinner,
   ),
 ];

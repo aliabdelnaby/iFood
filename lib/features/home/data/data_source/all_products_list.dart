@@ -1,26 +1,27 @@
+import 'package:ifood/core/utils/assets.dart';
 import 'package:ifood/features/home/data/models/product_model.dart';
 
 List<ProductModel> allProductsList = [
   ProductModel(
+    name: 'Meat',
+    category: 'Dinner',
+    image: Assets.imagesMeat,
+    description: '',
+    price: '\$30.3',
+    oldPrice: '\$35.2',
+  ),
+  ProductModel(
     name: 'Honey toast',
-    image: 'assets/images/Honeytoast.jpg',
+    image: Assets.imagesHoneytoast,
     price: '\$8.9',
     category: 'Breakfast',
     description: '',
     oldPrice: '\$9.9',
   ),
   ProductModel(
-    name: 'Meat',
-    category: 'Dinner',
-    image: 'assets/images/Meat.jpg',
-    description: '',
-    price: '\$30.3',
-    oldPrice: '\$35.2',
-  ),
-  ProductModel(
     name: 'Pizza',
     category: 'Lunch',
-    image: 'assets/images/Pizza.jpg',
+    image: Assets.imagesPizza,
     description: '',
     price: '\$15.7',
     oldPrice: '\$20.14',
@@ -28,7 +29,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Grape Leaves',
     category: 'Lunch',
-    image: 'assets/images/GrapeLeaves.jpg',
+    image: Assets.imagesGrapeLeaves,
     description: '',
     price: '\$25.9',
     oldPrice: '\$26.1',
@@ -36,14 +37,14 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Cupcake',
     category: 'Snack',
-    image: 'assets/images/Cupcake.jpg',
+    image: Assets.imagesCupcake,
     description: '',
     price: '\$9.1',
     oldPrice: '\$12.45',
   ),
   ProductModel(
     name: 'Croissant',
-    image: 'assets/images/Croissant.jpg',
+    image: Assets.imagesCroissant,
     price: '\$5.5',
     category: 'Breakfast',
     description: '',
@@ -51,7 +52,7 @@ List<ProductModel> allProductsList = [
   ),
   ProductModel(
     name: 'Eggs',
-    image: 'assets/images/Eggs.jpg',
+    image: Assets.imagesEggs,
     price: '\$3.3',
     category: 'Breakfast',
     description: '',
@@ -60,7 +61,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Shawarma',
     category: 'Dinner',
-    image: 'assets/images/Shawarma.jpg',
+    image: Assets.imagesShawarma,
     description: '',
     price: '\$15.8',
     oldPrice: '\$20.4',
@@ -68,7 +69,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Pasta',
     category: 'Dinner',
-    image: 'assets/images/Pasta.jpg',
+    image: Assets.imagesPasta,
     description: '',
     price: '\$26.4',
     oldPrice: '\$28.6',
@@ -76,7 +77,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Humburger',
     category: 'Lunch',
-    image: 'assets/images/Humburger.jpg',
+    image: Assets.imagesHumburger,
     description: '',
     price: '\$20.2',
     oldPrice: '\$24.5',
@@ -84,7 +85,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Fish',
     category: 'Lunch',
-    image: 'assets/images/Fish.jpg',
+    image: Assets.imagesFish,
     description: '',
     price: '\$17.5',
     oldPrice: '\$19.99',
@@ -92,7 +93,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Cookies',
     category: 'Snack',
-    image: 'assets/images/Cookies.jpg',
+    image: Assets.imagesCookies,
     description: '',
     price: '\$5.9',
     oldPrice: '\$8.8',
@@ -100,14 +101,14 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Donuts',
     category: 'Snack',
-    image: 'assets/images/Donuts.jpg',
+    image: Assets.imagesDonuts,
     description: '',
     price: '\$6.4',
     oldPrice: '\$8.2',
   ),
   ProductModel(
     name: 'Pie with Honey',
-    image: 'assets/images/PiewithHoney.jpg',
+    image: Assets.imagesPiewithHoney,
     price: '\$7.1',
     category: 'Breakfast',
     description: '',
@@ -116,7 +117,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Fried Chicken',
     category: 'Dinner',
-    image: 'assets/images/FriedChicken.jpg',
+    image: Assets.imagesFriedChicken,
     description: '',
     price: '\$29.2',
     oldPrice: '\$31.8',
@@ -124,7 +125,7 @@ List<ProductModel> allProductsList = [
   ProductModel(
     name: 'Apple',
     category: 'Snack',
-    image: 'assets/images/apple.jpg',
+    image: Assets.imagesApple,
     description: '',
     price: '\$2.5',
     oldPrice: '\$3.00',
