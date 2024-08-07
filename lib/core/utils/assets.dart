@@ -1,21 +1,5 @@
 class Assets {
   Assets._();
-  
-  /// Assets for imagesActiveCart
-  /// assets/images/activeCart.svg
-  static const String imagesActiveCart = "assets/images/activeCart.svg";
-
-  /// Assets for imagesActiveFavorite
-  /// assets/images/activeFavorite.svg
-  static const String imagesActiveFavorite = "assets/images/activeFavorite.svg";
-
-  /// Assets for imagesActiveHome
-  /// assets/images/activeHome.svg
-  static const String imagesActiveHome = "assets/images/activeHome.svg";
-
-  /// Assets for imagesActiveProfile
-  /// assets/images/activeProfile.svg
-  static const String imagesActiveProfile = "assets/images/activeProfile.svg";
 
   /// Assets for imagesAll
   /// assets/images/all.svg
@@ -28,10 +12,6 @@ class Assets {
   /// Assets for imagesBreakFast
   /// assets/images/breakFast.svg
   static const String imagesBreakFast = "assets/images/breakFast.svg";
-
-  /// Assets for imagesCart
-  /// assets/images/cart.svg
-  static const String imagesCart = "assets/images/cart.svg";
 
   /// Assets for imagesCookies
   /// assets/images/Cookies.jpg
@@ -57,10 +37,6 @@ class Assets {
   /// assets/images/Eggs.jpg
   static const String imagesEggs = "assets/images/Eggs.jpg";
 
-  /// Assets for imagesFavorite
-  /// assets/images/favorite.svg
-  static const String imagesFavorite = "assets/images/favorite.svg";
-
   /// Assets for imagesFish
   /// assets/images/Fish.jpg
   static const String imagesFish = "assets/images/Fish.jpg";
@@ -72,10 +48,6 @@ class Assets {
   /// Assets for imagesGrapeLeaves
   /// assets/images/GrapeLeaves.jpg
   static const String imagesGrapeLeaves = "assets/images/GrapeLeaves.jpg";
-
-  /// Assets for imagesHome
-  /// assets/images/home.svg
-  static const String imagesHome = "assets/images/home.svg";
 
   /// Assets for imagesHoneytoast
   /// assets/images/Honeytoast.jpg
@@ -113,10 +85,6 @@ class Assets {
   /// assets/images/plant.svg
   static const String imagesPlant = "assets/images/plant.svg";
 
-  /// Assets for imagesProfile
-  /// assets/images/profile.svg
-  static const String imagesProfile = "assets/images/profile.svg";
-
   /// Assets for imagesShawarma
   /// assets/images/Shawarma.jpg
   static const String imagesShawarma = "assets/images/Shawarma.jpg";
@@ -129,4 +97,3 @@ class Assets {
   /// assets/images/snack.svg
   static const String imagesSnack = "assets/images/snack.svg";
 }
-

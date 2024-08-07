@@ -129,8 +129,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           },
                         );
                       },
-                      child:
-                          HomeProductItem(product: _filteredProductList[index]),
+                      child: HomeProductItem(
+                        product: _filteredProductList[index],
+                      ),
                     );
                   },
                 ),

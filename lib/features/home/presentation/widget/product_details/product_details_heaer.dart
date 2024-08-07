@@ -18,10 +18,12 @@ class ProductDetailsHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              product.name,
-              style: AppStyles.style28w700.copyWith(
-                color: AppColors.blackColor,
+            Expanded(
+              child: Text(
+                product.name,
+                style: AppStyles.style28w700.copyWith(
+                  color: AppColors.blackColor,
+                ),
               ),
             ),
             Row(
@@ -41,23 +43,25 @@ class ProductDetailsHeader extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                    text: '${product.price} ',
-                    style: AppStyles.style18w600.copyWith(
-                      color: AppColors.primaryColor,
+            Expanded(
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: '${product.price} ',
+                      style: AppStyles.style18w600.copyWith(
+                        color: AppColors.primaryColor,
+                      ),
                     ),
-                  ),
-                  TextSpan(
-                    text: product.oldPrice,
-                    style: AppStyles.style14w500Black.copyWith(
-                      color: AppColors.greyColor,
-                      decoration: TextDecoration.lineThrough,
+                    TextSpan(
+                      text: product.oldPrice,
+                      style: AppStyles.style14w500Black.copyWith(
+                        color: AppColors.greyColor,
+                        decoration: TextDecoration.lineThrough,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             Row(

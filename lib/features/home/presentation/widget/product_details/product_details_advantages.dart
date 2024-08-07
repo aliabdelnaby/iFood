@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -6,9 +5,7 @@ import '../../../../../core/utils/app_text_styles.dart';
 import '../../../../../core/utils/assets.dart';
 
 class ProductDetailsAdvantages extends StatelessWidget {
-  const ProductDetailsAdvantages({
-    super.key,
-  });
+  const ProductDetailsAdvantages({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +23,7 @@ class ProductDetailsAdvantages extends StatelessWidget {
             color: AppColors.primaryColor,
           ),
         ),
+        const SizedBox(width: 10),
         TextButton.icon(
           onPressed: () {},
           label: const Text(
@@ -37,6 +35,7 @@ class ProductDetailsAdvantages extends StatelessWidget {
             color: AppColors.primaryColor,
           ),
         ),
+        const SizedBox(width: 10),
         TextButton.icon(
           onPressed: () {},
           label: const Text(
