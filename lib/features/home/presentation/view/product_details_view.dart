@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:ifood/core/utils/app_colors.dart';
 import 'package:ifood/features/home/data/models/product_model.dart';
 import 'package:ifood/features/home/presentation/widget/product_details/back_btn.dart';
+import 'package:ifood/features/home/presentation/widget/product_details/product_details_advantages.dart';
 import 'package:ifood/features/home/presentation/widget/product_details/product_details_heaer.dart';
 import 'package:ifood/features/home/presentation/widget/product_details/product_details_nav_bar.dart';
 
@@ -42,7 +43,8 @@ class ProductDetailsView extends StatelessWidget {
                 child: Column(
                   children: [
                     ProductDetailsHeader(product: product),
-                    
+                    const SizedBox(height: 13),
+                    const ProductDetailsAdvantages(),
                   ],
                 ),
               ),

@@ -65,6 +65,7 @@ class ProductDetailsHeader extends StatelessWidget {
                 const Icon(
                   Icons.access_time_filled,
                   color: AppColors.primaryColor,
+                  size: 16,
                 ),
                 const SizedBox(width: 4),
                 Text(
