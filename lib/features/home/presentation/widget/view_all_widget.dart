@@ -5,15 +5,16 @@ import '../../../../core/utils/app_text_styles.dart';
 class ViewAllWidget extends StatelessWidget {
   const ViewAllWidget({
     super.key,
+    this.onTap,
   });
-
+  final void Function()? onTap;
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsetsDirectional.only(end: 23.0),
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(end: 23.0),
       child: InkWell(
-        onTap: null,
-        child: Align(
+        onTap: onTap,
+        child: const Align(
           alignment: Alignment.centerRight,
           child: Text(
             'View All',

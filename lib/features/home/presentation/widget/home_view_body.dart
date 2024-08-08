@@ -87,29 +87,33 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 ),
               ),
               const SizedBox(height: 12),
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.1,
-                child: ListView.separated(
-                  clipBehavior: Clip.none,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: menuListItems.length,
-                  separatorBuilder: (context, index) =>
-                      const SizedBox(width: 30),
-                  itemBuilder: (context, index) {
-                    final item = menuListItems[index];
-                    return MenuItem(
-                      item: item,
-                      isSelected: index == _selectedIndex,
-                      onTap: () => _onMenuItemTap(index),
-                    );
-                  },
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                clipBehavior: Clip.none,
+                child: Row(
+                  children: List.generate(
+                    menuListItems.length,
+                    (index) {
+                      final item = menuListItems[index];
+                      return Padding(
+                        padding: const EdgeInsetsDirectional.only(end: 30),
+                        child: MenuItem(
+                          item: item,
+                          isSelected: index == _selectedIndex,
+                          onTap: () => _onMenuItemTap(index),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
           ),
         ),
         const SizedBox(height: 20),
-        const ViewAllWidget(),
+        ViewAllWidget(
+          onTap: () {},
+        ),
         Expanded(
           child: _filteredProductList.isEmpty
               ? Center(
