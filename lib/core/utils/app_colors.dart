@@ -15,4 +15,6 @@ class AppColors {
   static const Color tableColor = Color(0xFF737373);
   static const Color logOutColor = Color(0xFFF6F6F6);
   static const Color scaffoldBackgroundColor = Color(0xffF7F7F7);
+  static const Color arrowColor = Color(0xFFCCCCCC);
+  static const Color logOutIconColor = Color(0xFFBFBFC2);
 }
