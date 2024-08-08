@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../features/home/presentation/view/home_view.dart';
 import '../../features/home/presentation/view/product_details_view.dart';
 import '../../features/home/presentation/widget/nav_bar_widgets.dart';
@@ -31,11 +32,8 @@ final GoRouter router = GoRouter(
           key: state.pageKey,
           child: const StartView(),
           transitionsBuilder: (context, animation, secondaryAnimation, child) {
-            return SlideTransition(
-              position: Tween<Offset>(
-                begin: const Offset(1, 0),
-                end: Offset.zero,
-              ).animate(animation),
+            return FadeTransition(
+              opacity: animation,
               child: child,
             );
           },

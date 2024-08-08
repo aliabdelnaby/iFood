@@ -13,7 +13,7 @@ class FavoriteItem extends StatefulWidget {
 }
 
 class _FavoriteItemState extends State<FavoriteItem> {
-  bool isFavorite = false;
+  bool isFavorite = true;
   @override
   Widget build(BuildContext context) {
     return Container(

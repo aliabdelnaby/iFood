@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
-import 'cart_item.dart';
 import '../../../home/data/data_source/lunch_list.dart';
+import 'cart_item.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
