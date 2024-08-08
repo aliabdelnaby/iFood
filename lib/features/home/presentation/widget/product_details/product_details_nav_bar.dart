@@ -2,11 +2,17 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_colors.dart';
 import '../../../../../core/utils/app_text_styles.dart';
 
-class ProductDetailsBottomNavigationBar extends StatelessWidget {
-  const ProductDetailsBottomNavigationBar({
-    super.key,
-  });
+class ProductDetailsBottomNavigationBar extends StatefulWidget {
+  const ProductDetailsBottomNavigationBar({super.key});
 
+  @override
+  State<ProductDetailsBottomNavigationBar> createState() =>
+      _ProductDetailsBottomNavigationBarState();
+}
+
+class _ProductDetailsBottomNavigationBarState
+    extends State<ProductDetailsBottomNavigationBar> {
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,11 +22,16 @@ class ProductDetailsBottomNavigationBar extends StatelessWidget {
       child: Row(
         children: [
           GestureDetector(
-            onTap: () {},
-            child: const Icon(
+            onTap: () {
+              setState(() {
+                isFavorite = !isFavorite;
+              });
+            },
+            child: Icon(
               Icons.favorite,
               size: 30,
-              color: AppColors.primGreyColor,
+              color:
+                  isFavorite ? AppColors.likedColor : AppColors.primGreyColor,
             ),
           ),
           const SizedBox(width: 20),
