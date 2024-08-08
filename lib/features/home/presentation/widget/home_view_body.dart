@@ -111,9 +111,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
         ),
         const SizedBox(height: 20),
-        ViewAllWidget(
-          onTap: () {},
-        ),
+        ViewAllWidget(onTap: () {}),
+        const SizedBox(height: 8),
         Expanded(
           child: _filteredProductList.isEmpty
               ? Center(
