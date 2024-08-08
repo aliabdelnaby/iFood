@@ -40,9 +40,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         _filteredProductList = _selectedProductList;
       } else {
         _filteredProductList = _selectedProductList
-            .where((product) => product.name
-                .toLowerCase()
-                .contains(widget.searchController.text.toLowerCase()))
+            .where(
+              (product) => product.name.toLowerCase().contains(
+                    widget.searchController.text.toLowerCase(),
+                  ),
+            )
             .toList();
       }
     });

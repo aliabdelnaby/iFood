@@ -52,7 +52,7 @@ class FavoriteItem extends StatelessWidget {
                   onTap: () {},
                   child: const Icon(
                     Icons.favorite,
-                    color: Colors.red,
+                    color: AppColors.likedColor,
                   ),
                 ),
               ),

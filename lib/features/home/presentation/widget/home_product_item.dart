@@ -3,9 +3,17 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../data/models/product_model.dart';
 
-class HomeProductItem extends StatelessWidget {
+class HomeProductItem extends StatefulWidget {
   const HomeProductItem({super.key, required this.product});
   final ProductModel product;
+
+  @override
+  State<HomeProductItem> createState() => _HomeProductItemState();
+}
+
+class _HomeProductItemState extends State<HomeProductItem> {
+  bool isFavorited = false;
+  bool isAddedToCart = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,20 +41,26 @@ class HomeProductItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadiusDirectional.circular(10),
                   child: Image.asset(
-                    product.image,
+                    widget.product.image,
                     height: 102,
                     width: 222,
                     fit: BoxFit.cover,
                   ),
                 ),
-                const Positioned(
+                Positioned(
                   right: 10,
                   top: 9,
                   child: InkWell(
-                    onTap: null,
+                    onTap: () {
+                      setState(() {
+                        isFavorited = !isFavorited;
+                      });
+                    },
                     child: Icon(
                       Icons.favorite,
-                      color: AppColors.primGreyColor,
+                      color: isFavorited
+                          ? AppColors.likedColor
+                          : AppColors.primGreyColor,
                     ),
                   ),
                 ),
@@ -59,13 +73,13 @@ class HomeProductItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  product.name,
+                  widget.product.name,
                   style: AppStyles.style14w600,
                   overflow: TextOverflow.ellipsis,
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  product.category,
+                  widget.product.category,
                   style: AppStyles.style12w400gery,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -89,14 +103,14 @@ class HomeProductItem extends StatelessWidget {
                         text: TextSpan(
                           children: [
                             TextSpan(
-                              text: '${product.price} ',
+                              text: '${widget.product.price} ',
                               style: AppStyles.style14w500Black.copyWith(
                                 color: AppColors.primaryColor,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
                             TextSpan(
-                              text: product.oldPrice,
+                              text: widget.product.oldPrice,
                               style: AppStyles.style12w400gery.copyWith(
                                 decoration: TextDecoration.lineThrough,
                                 overflow: TextOverflow.ellipsis,
@@ -106,11 +120,17 @@ class HomeProductItem extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const InkWell(
-                      onTap: null,
+                    InkWell(
+                      onTap: () {
+                        setState(() {
+                          isAddedToCart = !isAddedToCart;
+                        });
+                      },
                       child: Icon(
                         Icons.shopping_cart,
-                        color: AppColors.primaryColor,
+                        color: isAddedToCart
+                            ? AppColors.primaryColor
+                            : AppColors.greyColor,
                         size: 20,
                       ),
                     ),
