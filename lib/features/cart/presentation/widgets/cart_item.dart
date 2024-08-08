@@ -106,7 +106,7 @@ class CartItem extends StatelessWidget {
                             ),
                             const SizedBox(width: 8),
                             const Text(
-                              '2',
+                              '1',
                               style: AppStyles.style12w400,
                             ),
                             const SizedBox(width: 8),

@@ -3,11 +3,17 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../home/data/models/product_model.dart';
 
-class FavoriteItem extends StatelessWidget {
+class FavoriteItem extends StatefulWidget {
   const FavoriteItem({super.key, required this.product});
 
   final ProductModel product;
 
+  @override
+  State<FavoriteItem> createState() => _FavoriteItemState();
+}
+
+class _FavoriteItemState extends State<FavoriteItem> {
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +45,7 @@ class FavoriteItem extends StatelessWidget {
                   ),
                   child: Image(
                     image: AssetImage(
-                      product.image,
+                      widget.product.image,
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -49,10 +55,16 @@ class FavoriteItem extends StatelessWidget {
                 top: 10.5,
                 right: 9.5,
                 child: InkWell(
-                  onTap: () {},
-                  child: const Icon(
+                  onTap: () {
+                    setState(() {
+                      isFavorite = !isFavorite;
+                    });
+                  },
+                  child: Icon(
                     Icons.favorite,
-                    color: AppColors.likedColor,
+                    color: isFavorite
+                        ? AppColors.likedColor
+                        : AppColors.primGreyColor,
                   ),
                 ),
               ),
@@ -65,12 +77,12 @@ class FavoriteItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  product.name,
+                  widget.product.name,
                   style: AppStyles.style14w600,
                   overflow: TextOverflow.ellipsis,
                 ),
                 Text(
-                  product.category,
+                  widget.product.category,
                   style: AppStyles.style12w600.copyWith(
                     color: AppColors.tableColor,
                   ),

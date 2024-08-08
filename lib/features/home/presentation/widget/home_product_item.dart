@@ -130,7 +130,7 @@ class _HomeProductItemState extends State<HomeProductItem> {
                         Icons.shopping_cart,
                         color: isAddedToCart
                             ? AppColors.primaryColor
-                            : AppColors.greyColor,
+                            : AppColors.primGreyColor,
                         size: 20,
                       ),
                     ),
