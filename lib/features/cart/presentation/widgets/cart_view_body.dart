@@ -34,7 +34,7 @@ class CartViewBody extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "79.3",
+                  "\$29.2",
                   style: AppStyles.style14w500Black.copyWith(
                     color: AppColors.greyColor,
                   ),

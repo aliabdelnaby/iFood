@@ -3,10 +3,35 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
 import '../../../home/data/models/product_model.dart';
 
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   const CartItem({super.key, required this.product});
 
   final ProductModel product;
+
+  @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+  int quantity = 1;
+
+  void _increaseQuantity() {
+    setState(() {
+      quantity++;
+    });
+  }
+
+  void _decreaseQuantity() {
+    if (quantity > 1) {
+      setState(() {
+        quantity--;
+      });
+    }
+  }
+
+  double get _currentPrice {
+    return 17.3 * quantity;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +51,7 @@ class CartItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadiusDirectional.circular(10),
                   child: Image.asset(
-                    product.image,
+                    widget.product.image,
                     height: 123,
                     width: 218,
                     fit: BoxFit.cover,
@@ -39,7 +64,7 @@ class CartItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      product.name,
+                      widget.product.name,
                       style: AppStyles.style18w600.copyWith(
                         color: AppColors.blackColor,
                       ),
@@ -47,7 +72,7 @@ class CartItem extends StatelessWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      product.category,
+                      widget.product.category,
                       style: AppStyles.style14w500Black.copyWith(
                         color: AppColors.greyColor,
                       ),
@@ -70,14 +95,14 @@ class CartItem extends StatelessWidget {
                       text: TextSpan(
                         children: [
                           TextSpan(
-                            text: '${product.price} ',
+                            text: '\$${_currentPrice.toStringAsFixed(2)} ',
                             style: AppStyles.style14w500Black.copyWith(
                               color: AppColors.primaryColor,
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
                           TextSpan(
-                            text: product.oldPrice,
+                            text: widget.product.oldPrice,
                             style: AppStyles.style12w400gery.copyWith(
                               decoration: TextDecoration.lineThrough,
                               overflow: TextOverflow.ellipsis,
@@ -92,34 +117,40 @@ class CartItem extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            Container(
-                              padding: const EdgeInsetsDirectional.all(4),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: AppColors.primaryColor,
-                              ),
-                              child: const Icon(
-                                Icons.remove,
-                                color: AppColors.whiteColor,
-                                size: 12,
+                            InkWell(
+                              onTap: _decreaseQuantity,
+                              child: Container(
+                                padding: const EdgeInsetsDirectional.all(4),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: AppColors.primaryColor,
+                                ),
+                                child: const Icon(
+                                  Icons.remove,
+                                  color: AppColors.whiteColor,
+                                  size: 12,
+                                ),
                               ),
                             ),
                             const SizedBox(width: 8),
-                            const Text(
-                              '1',
+                            Text(
+                              '$quantity',
                               style: AppStyles.style12w400,
                             ),
                             const SizedBox(width: 8),
-                            Container(
-                              padding: const EdgeInsetsDirectional.all(4),
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: AppColors.primaryColor,
-                              ),
-                              child: const Icon(
-                                Icons.add,
-                                color: AppColors.whiteColor,
-                                size: 12,
+                            InkWell(
+                              onTap: _increaseQuantity,
+                              child: Container(
+                                padding: const EdgeInsetsDirectional.all(4),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(50),
+                                  color: AppColors.primaryColor,
+                                ),
+                                child: const Icon(
+                                  Icons.add,
+                                  color: AppColors.whiteColor,
+                                  size: 12,
+                                ),
                               ),
                             ),
                           ],
