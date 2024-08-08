@@ -72,7 +72,7 @@ class FavoriteItem extends StatelessWidget {
                 Text(
                   product.category,
                   style: AppStyles.style12w600.copyWith(
-                    color: AppColors.emailColor,
+                    color: AppColors.tableColor,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
