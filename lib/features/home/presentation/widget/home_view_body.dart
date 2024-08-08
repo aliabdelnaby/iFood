@@ -73,7 +73,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 23),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 23),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

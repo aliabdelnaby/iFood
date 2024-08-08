@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/features/cart/presentation/widgets/cart_item.dart';
-import 'package:ifood/features/home/data/data_source/lunch_list.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
+import 'cart_item.dart';
+import '../../../home/data/data_source/lunch_list.dart';
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});

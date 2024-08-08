@@ -82,7 +82,7 @@ class _StartViewState extends State<StartView>
       backgroundColor: AppColors.primaryColor,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 25, vertical: 25),
           child: Form(
             key: _formKey,
             child: Column(

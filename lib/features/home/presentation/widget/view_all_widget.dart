@@ -10,7 +10,7 @@ class ViewAllWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 23.0, right: 23.0),
+      padding: EdgeInsetsDirectional.only(end: 23.0),
       child: InkWell(
         onTap: null,
         child: Align(

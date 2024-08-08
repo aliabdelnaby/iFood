@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ifood/core/utils/app_colors.dart';
-import 'package:ifood/core/utils/app_text_styles.dart';
-import 'package:ifood/features/home/data/models/product_model.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../core/utils/app_text_styles.dart';
+import '../../../home/data/models/product_model.dart';
 
 class CartItem extends StatelessWidget {
   const CartItem({super.key, required this.product});
@@ -93,7 +93,7 @@ class CartItem extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              padding: const EdgeInsets.all(4),
+                              padding: const EdgeInsetsDirectional.all(4),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 color: AppColors.primaryColor,
@@ -111,7 +111,7 @@ class CartItem extends StatelessWidget {
                             ),
                             const SizedBox(width: 8),
                             Container(
-                              padding: const EdgeInsets.all(4),
+                              padding: const EdgeInsetsDirectional.all(4),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 color: AppColors.primaryColor,

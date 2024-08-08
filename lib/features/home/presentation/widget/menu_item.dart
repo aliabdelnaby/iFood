@@ -34,7 +34,7 @@ class MenuItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(50),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(9.0),
+              padding: const EdgeInsetsDirectional.all(9.0),
               child: Center(
                 child: SvgPicture.asset(
                   item.image,

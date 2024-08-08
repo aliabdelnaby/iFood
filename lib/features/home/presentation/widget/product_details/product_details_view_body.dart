@@ -15,7 +15,7 @@ class ProductDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 23),
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 23),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -44,7 +44,7 @@ class ProductDetailsViewBody extends StatelessWidget {
                 allProductsList.length,
                 (index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: 11),
+                    padding: const EdgeInsetsDirectional.only(end: 11),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: InkWell(
