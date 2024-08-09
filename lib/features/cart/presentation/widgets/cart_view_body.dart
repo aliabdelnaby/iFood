@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_text_styles.dart';
@@ -20,7 +21,16 @@ class CartViewBody extends StatelessWidget {
                 lunchList.length,
                 (index) {
                   final product = lunchList[index];
-                  return CartItem(product: product);
+                  return InkWell(
+                      onTap: () {
+                        GoRouter.of(context).push(
+                          '/productDetails',
+                          extra: {
+                            'product': product,
+                          },
+                        );
+                      },
+                      child: CartItem(product: product));
                 },
               ),
             ),
